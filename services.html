@@ -1,0 +1,825 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Island Hopes Travels - Our Services">
+    <meta name="description"
+      content="Discover the comprehensive travel services offered by Island Hopes Travels in Sri Lanka, including customized tours, transportation, hotel bookings, and expert guides.">
+    <title>Our Services | Island Hopes Travels</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/other.css">
+ <!--favicon-->
+ <link rel="icon" href="./assets/logo.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/logo.ico">
+  
+
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+    
+    <!-- Service Page Specific CSS -->
+    <style>
+      /* Service Card Styles */
+      .service-card {
+        background: var(--make);
+      
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        border: 1px solid rgba(116, 157, 200, 0.2);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        border-color: var(--gold-crayola);
+      }
+      
+      .service-card-img {
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .service-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      
+      .service-card:hover .service-card-img img {
+        transform: scale(1.05);
+      }
+      
+      .service-card-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: var(--gold-crayola);
+        color: var(--make);
+        padding: 5px 15px;
+    
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      
+      .service-card-content {
+        padding: 25px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .service-card-title {
+        font-size: 2.2rem;
+        color: var(--gold-crayola);
+        margin-bottom: 15px;
+        font-family: var(--fontFamily-forum);
+      }
+      
+      .service-card-text {
+        margin-bottom: 20px;
+        flex-grow: 1;
+      }
+      
+      .service-features {
+        margin: 15px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      
+      .service-feature {
+        background: rgba(116, 157, 200, 0.1);
+        padding: 5px 12px;
+   
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      
+      .service-feature ion-icon {
+        color: var(--gold-crayola);
+        font-size: 1.4rem;
+      }
+      
+      /* Service Process Section */
+      .process-step {
+        position: relative;
+        padding-left: 80px;
+        margin-bottom: 40px;
+      }
+      
+      .process-step-number {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 60px;
+        height: 60px;
+        background: var(--gold-crayola);
+        color: var(--make);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.4rem;
+        font-weight: bold;
+        font-family: var(--fontFamily-forum);
+      }
+      
+      .process-step-content h3 {
+        font-size: 2rem;
+        color: var(--gold-crayola);
+        margin-bottom: 10px;
+        font-family: var(--fontFamily-forum);
+      }
+      
+      /* Why Choose Us Section */
+      .benefit-card {
+        background: rgba(255,255,255,0.05);
+      
+        padding: 30px;
+        border: 1px solid rgba(116, 157, 200, 0.2);
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+      
+      .benefit-card:hover {
+        background: rgba(116, 157, 200, 0.05);
+        border-color: var(--gold-crayola);
+        transform: translateY(-5px);
+      }
+      
+      .benefit-icon {
+        font-size: 4rem;
+        color: var(--gold-crayola);
+        margin-bottom: 20px;
+      }
+      
+      /* FAQ Section */
+      .faq-item {
+        margin-bottom: 15px;
+        border: 1px solid rgba(116, 157, 200, 0.2);
+       
+        overflow: hidden;
+      }
+      
+      .faq-question {
+        padding: 20px;
+        background: rgba(116, 157, 200, 0.05);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+      
+      .faq-question:hover {
+        background: rgba(116, 157, 200, 0.1);
+      }
+      
+      .faq-question.active {
+        background: rgba(116, 157, 200, 0.1);
+        color: var(--gold-crayola);
+      }
+      
+      .faq-answer {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      .faq-answer.active {
+        padding: 20px;
+        max-height: 500px;
+      }
+      
+      .faq-toggle {
+        transition: transform 0.3s ease;
+      }
+      
+      .faq-question.active .faq-toggle {
+        transform: rotate(180deg);
+      }
+      
+      /* Responsive Adjustments */
+      @media (max-width: 768px) {
+        .process-step {
+          padding-left: 60px;
+        }
+        
+        .process-step-number {
+          width: 45px;
+          height: 45px;
+          font-size: 2rem;
+        }
+        
+        .service-card-img {
+          height: 200px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--preloader-->
+    <div class="preload" data-preload>
+      <div class="circle"></div>
+      <div class="flex items-center w-full justify-center text-center">
+        <p class="text">Island Hopes Travels</p>
+      </div>
+    </div>
+
+    <!--top-bar-->
+    <div class="topbar">
+      <div class="modern-container">
+        <address class="topbar-item">
+          <div class="icon">
+            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">No.29, Araliya Sayubhagya</span>
+        </address>
+
+        <div class="separator force-color"></div>
+
+        <div class="topbar-item">
+          <div class="icon">
+            <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">Always: 9.00 am to 6.00 pm</span>
+        </div>
+
+        <a href="tel:+94774852795" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">+94 77 485 2795</span>
+        </a>
+
+        <div class="separator force-color"></div>
+
+        <a href="mailto:islandhopestravels@gmail.com" class="topbar-item link">
+          <div class="icon">
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+          </div>
+          <span class="span">islandhopestravels@gmail.com</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" data-header>
+      <div class="modern-container">
+        <a href="index.html" class="logo">
+          <img src="./assets/logo - header.webp" alt="" width="100px" height="50px">
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <button class="close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+
+          <a href="index.html" class="logo">
+            <img src="./assets/logo.webp" alt="Island Hopes Travels Logo">
+          </a>
+
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="index.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Home</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="about.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">About us</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="services.html" class="navbar-link hover-underline active">
+                <div class="separator"></div>
+                <span class="span">Services</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="packages.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Packages</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="blog.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Blog</span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="contact.html" class="navbar-link hover-underline">
+                <div class="separator"></div>
+                <span class="span">Contact us</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="text-center">
+            <p class="headline-1 navbar-title">Visit Us</p>
+            <address class="body-4">
+              No.29,Araliya Sayubhagya
+            </address>
+            <p class="body-4 navbar-text">
+              Open: 9.00 am to 6.00 pm
+            </p>
+            <a href="mailto:islandhopestravels@gmail.com" class="sidebar-link">islandhopestravels@gmail.com</a>
+            <div class="separator"></div>
+            <p class="contact-label">Booking Request</p>
+            <a href="tel:+94774852795" class="body-1 contact-number hover-underline">+94 77 485 2795</a>
+          </div>
+        </nav>
+
+        <div class="header-actions">
+          <a href="contact.html" class="btn btn-secondary">
+            <span class="text text-1">Contact</span>
+            <span class="text text-2" aria-hidden>Contact</span>
+          </a>
+
+          <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+            <span class="line line-1"></span>
+            <span class="line line-2"></span>
+            <span class="line line-3"></span>
+          </button>
+        </div>
+
+        <div class="overlay" data-nav-toggler data-overlay></div>
+      </div>
+    </header>
+
+    <!-- Top Gradient -->
+    <div id="top-gradient" class="transition-all duration-1000"></div>
+
+    <!-- Main Content -->
+    <main>
+    
+      <section id="services">
+
+      </section>
+
+      <!-- Services Introduction -->
+      <section class="section" style="padding: 8rem 0;">
+        <div class="container" style="margin-inline: auto; max-width: 1200px; padding: 0 2rem;">
+          <div class="text-center" style="margin-bottom: 6rem;">
+            <div class="section-subtitle" style="color: var(--gold-crayola);">Tailored Experiences</div>
+            <h2 class="headline-1" style="color: var(--gold-crayola); margin-bottom: 2rem;">Your Journey, Your Way</h2>
+            <p class="body-2" style="max-width: 800px; margin: 0 auto;">
+              At Island Hopes Travels, we offer a complete range of services to make your Sri Lankan adventure seamless and unforgettable. 
+              From the moment you arrive until your departure, we handle every detail with care and expertise.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Services Section -->
+    <!-- Main Services Section -->
+
+      <!-- Our Process Section -->
+      <section class="section" style="padding: 8rem 0; background-color: var(--eerie-black-1); color: var(--make);">
+        <div class="container" style="margin-inline: auto; max-width: 1200px; padding: 0 2rem;">
+          <div class="text-center" style="margin-bottom: 6rem;">
+            <div class="section-subtitle" style="color: var(--gold-crayola);">How We Work</div>
+            <h2 class="headline-1" style="color: var(--gold-crayola); margin-bottom: 2rem;">Our Service Process</h2>
+            <p class="body-2" style="max-width: 800px; margin: 0 auto;">
+              We follow a meticulous process to ensure every aspect of your trip is perfectly arranged and exceeds your expectations.
+            </p>
+          </div>
+
+          <div style="max-width: 800px; margin: 0 auto;">
+            <div class="process-step">
+              <div class="process-step-number">1</div>
+              <div class="process-step-content">
+                <h3>Initial Consultation</h3>
+                <p class="body-2">We start by understanding your travel preferences, interests, budget, and expectations through a detailed conversation.</p>
+              </div>
+            </div>
+            
+            <div class="process-step">
+              <div class="process-step-number">2</div>
+              <div class="process-step-content">
+                <h3>Itinerary Design</h3>
+                <p class="body-2">Our experts create a customized itinerary that balances must-see attractions with off-the-beaten-path experiences.</p>
+              </div>
+            </div>
+            
+            <div class="process-step">
+              <div class="process-step-number">3</div>
+              <div class="process-step-content">
+                <h3>Refinement</h3>
+                <p class="body-2">We refine the plan based on your feedback, making adjustments until it perfectly matches your vision.</p>
+              </div>
+            </div>
+            
+            <div class="process-step">
+              <div class="process-step-number">4</div>
+              <div class="process-step-content">
+                <h3>Booking & Confirmation</h3>
+                <p class="body-2">We handle all reservations and provide you with a detailed confirmation package.</p>
+              </div>
+            </div>
+            
+            <div class="process-step">
+              <div class="process-step-number">5</div>
+              <div class="process-step-content">
+                <h3>Travel Experience</h3>
+                <p class="body-2">Our team supports you throughout your journey, ensuring everything goes smoothly.</p>
+              </div>
+            </div>
+            
+            <div class="process-step">
+              <div class="process-step-number">6</div>
+              <div class="process-step-content">
+                <h3>Follow-up</h3>
+                <p class="body-2">After your trip, we gather feedback to continuously improve our services.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us Section -->
+      <section class="section" style="padding: 8rem 0;">
+        <div class="container" style="margin-inline: auto; max-width: 1200px; padding: 0 2rem;">
+          <div class="text-center" style="margin-bottom: 6rem;">
+            <div class="section-subtitle" style="color: var(--gold-crayola);">Our Advantages</div>
+            <h2 class="headline-1" style="color: var(--gold-crayola); margin-bottom: 2rem;">Why Choose Island Hopes Travels</h2>
+            <p class="body-2" style="max-width: 800px; margin: 0 auto;">
+              What sets us apart in creating exceptional travel experiences in Sri Lanka.
+            </p>
+          </div>
+
+          <div class="grid gap-10 lg:grid-cols-3 md:grid-cols-2">
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <ion-icon name="diamond-outline"></ion-icon>
+              </div>
+              <h3 class="title-4" style="color: var(--gold-crayola);">Local Expertise</h3>
+              <p class="body-2">With over a decade of experience, our deep local knowledge ensures you discover the real Sri Lanka beyond the guidebooks.</p>
+            </div>
+            
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <ion-icon name="heart-outline"></ion-icon>
+              </div>
+              <h3 class="title-4" style="color: var(--gold-crayola);">Personalized Service</h3>
+              <p class="body-2">We treat each traveler as unique, crafting experiences tailored to your specific interests and preferences.</p>
+            </div>
+            
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+              </div>
+              <h3 class="title-4" style="color: var(--gold-crayola);">Trust & Safety</h3>
+              <p class="body-2">Verified partners, insured services, and 24/7 support give you peace of mind throughout your journey.</p>
+            </div>
+            
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <ion-icon name="wallet-outline"></ion-icon>
+              </div>
+              <h3 class="title-4" style="color: var(--gold-crayola);">Best Value</h3>
+              <p class="body-2">Our local partnerships allow us to offer premium experiences at competitive prices.</p>
+            </div>
+            
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <ion-icon name="compass-outline"></ion-icon>
+              </div>
+              <h3 class="title-4" style="color: var(--gold-crayola);">Authentic Experiences</h3>
+              <p class="body-2">We connect you with authentic local experiences that most travelers never discover on their own.</p>
+            </div>
+            
+            <div class="benefit-card">
+              <div class="benefit-icon">
+                <ion-icon name="thumbs-up-outline"></ion-icon>
+              </div>
+              <h3 class="title-4" style="color: var(--gold-crayola);">Satisfaction Guarantee</h3>
+              <p class="body-2">Your satisfaction is our priority. We won't rest until you're completely happy with your experience.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="section" style="padding: 8rem 0; background-color: #f9f9f9;">
+        <div class="container" style="margin-inline: auto; max-width: 1200px; padding: 0 2rem;">
+          <div class="text-center" style="margin-bottom: 6rem;">
+            <div class="section-subtitle" style="color: var(--gold-crayola);">Need Help?</div>
+            <h2 class="headline-1" style="color: var(--gold-crayola); margin-bottom: 2rem;">Frequently Asked Questions</h2>
+            <p class="body-2" style="max-width: 800px; margin: 0 auto;">
+              Find answers to common questions about our services and travel in Sri Lanka.
+            </p>
+          </div>
+
+          <div style="max-width: 800px; margin: 0 auto;">
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>How far in advance should I book my trip?</span>
+                <ion-icon name="chevron-down-outline" class="faq-toggle"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p class="body-2">We recommend booking at least 3-6 months in advance for peak season (December to April) to ensure availability at preferred accommodations. For other times, 1-3 months is usually sufficient. Last-minute bookings are sometimes possible, but options may be limited.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>What's included in your tour packages?</span>
+                <ion-icon name="chevron-down-outline" class="faq-toggle"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p class="body-2">Our packages typically include accommodation, transportation, guide services, and some meals/activities as specified. We can also arrange flights, travel insurance, and special experiences upon request. Each package is customized, so inclusions vary based on your preferences.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Can you accommodate special dietary requirements?</span>
+                <ion-icon name="chevron-down-outline" class="faq-toggle"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p class="body-2">Absolutely. Sri Lankan cuisine is diverse and can accommodate most dietary needs. Just let us know about any restrictions (vegetarian, vegan, gluten-free, allergies, etc.) when booking, and we'll ensure all restaurants and accommodations are informed.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>What's your cancellation policy?</span>
+                <ion-icon name="chevron-down-outline" class="faq-toggle"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p class="body-2">Our cancellation policy varies depending on the services booked. Generally, deposits are refundable up to 60 days before travel, with decreasing percentages as the departure date approaches. We strongly recommend travel insurance to protect against unforeseen circumstances.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Is Sri Lanka safe for travelers?</span>
+                <ion-icon name="chevron-down-outline" class="faq-toggle"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p class="body-2">Sri Lanka is generally very safe for travelers. We take extra precautions with transportation partners, accommodations, and guides to ensure your safety. Our 24/7 support line is always available if you need assistance during your trip.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item">
+              <div class="faq-question">
+                <span>Can you arrange special experiences like weddings or proposals?</span>
+                <ion-icon name="chevron-down-outline" class="faq-toggle"></ion-icon>
+              </div>
+              <div class="faq-answer">
+                <p class="body-2">Yes! We specialize in creating memorable moments. Whether it's a beachfront wedding, romantic proposal, anniversary celebration, or special family gathering, we'll handle all the details to make it magical.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="section relative overflow-hidden z[1111]-" style="padding: 8rem 0; background-color: var(--gold-crayola);">
+
+        <div class="absolute top-0  right-0  "><img src="./assets/img-pattern.svg" alt="" width="200px"></div>
+        <div class="absolute top-0  left-0  "><img src="./assets/img-pattern.svg" alt="" width="200px"></div>
+        
+        <div class="container text-center" style="margin-inline: auto; max-width: 1200px; padding: 0 2rem;">
+          <h2 class="headline-1" style="color: var(--make); margin-bottom: 2rem;">Ready to Plan Your Sri Lankan Adventure?</h2>
+          <p class="body-2 mb-8" style="max-width: 800px; margin: 0 auto; color: var(--make);">
+            Contact us today to discuss your travel plans and let us create a customized itinerary just for you.
+          </p>
+          <div class="flex justify-center gap-4">
+            <a href="contact.html" class="btn" style="background-color: var(--make); color: var(--gold-crayola);">
+              <span class="text text-1">Get In Touch</span>
+              <span class="text text-2" aria-hidden="true">Get In Touch</span>
+            </a>
+            <a href="tel:+94774852795" class="btn" style="border: 2px solid var(--make); color: var(--make);">
+              <span class="text text-1">Call Now</span>
+              <span class="text text-2" aria-hidden="true">Call Now</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+     
+    <!-- Footer -->
+    <footer class="footer parallax" style="background-image: url('./assets/footer.jpg'); padding: 6rem 0; color: var(--make);">
+      <div class="container" style="margin-inline: auto; max-width: 1200px; padding: 0 2rem;">
+        <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem;">
+          <div class="footer-col">
+            <a href="index.html" class="logo" style="margin-bottom: 2rem; display: block;">
+              <div class="subtitle m-0 text-center space uppercase font-bold" style="line-height: 2rem; font-family: var(--fontFamily-forum); letter-spacing: 0.5rem; color: var(--make);">
+                Island Hopes
+                <div class="m-0">Travels</div>
+              </div>
+            </a>
+            <p class="body-2" style="color: var(--primary-brown); margin-bottom: 2rem;">Creating unforgettable memories in Sri Lanka with personalized tours and exceptional service.</p>
+            <div class="social-links" style="display: flex; gap: 1.5rem;">
+              <a href="#" class="social" style="color: var(--make); font-size: 2rem;">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+              <a href="#" class="social" style="color: var(--make); font-size: 2rem;">
+                <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+              </a>
+              <a href="#" class="social" style="color: var(--make); font-size: 2rem;">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+              <a href="#" class="social" style="color: var(--make); font-size: 2rem;">
+                <ion-icon name="logo-whatsapp"></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="title-3" style="color: var(--make); margin-bottom: 2rem; font-family: var(--fontFamily-forum);">Quick Links</h3>
+            <ul style="list-style: none;">
+              <li style="margin-bottom: 1rem;">
+                <a href="index.html" class="hover-underline" style="color: var(--make);">Home</a>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="about.html" class="hover-underline" style="color: var(--make);">About Us</a>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="services.html" class="hover-underline" style="color: var(--make);">Services</a>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="packages.html" class="hover-underline" style="color: var(--make);">Packages</a>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="blog.html" class="hover-underline" style="color: var(--make);">Blog</a>
+              </li>
+              <li style="margin-bottom: 1rem;">
+                <a href="contact.html" class="hover-underline" style="color: var(--make);">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="title-3" style="color: var(--make); margin-bottom: 2rem; font-family: var(--fontFamily-forum);">Contact Info</h3>
+            <address style="font-style: normal; margin-bottom: 2rem;">
+              <p class="body-2" style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem;">
+                <ion-icon name="location-outline" style="font-size: 4rem; color: var(--gold-crayola);"></ion-icon>
+                <span class="text-white">No. 29, Araliya Sayubhagya, Thulawala Road, Meda Kirimetiyana, Lunuwila, Sri Lanka</span>
+              </p>
+              <p class="body-2" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                <ion-icon name="call-outline" style="font-size: 2rem; color: var(--gold-crayola);"></ion-icon>
+                <a href="tel:+94774852795" style="color: var(--make);">+94 77 485 2795</a>
+              </p>
+              <p class="body-2" style="display: flex; align-items: center; gap: 1rem;">
+                <ion-icon name="mail-outline" style="font-size: 2rem; color: var(--gold-crayola);"></ion-icon>
+                <a href="mailto:islandhopestravels@gmail.com" style="color: var(--make);">islandhopestravels@gmail.com</a>
+              </p>
+            </address>
+          </div>
+
+          <div class="footer-col">
+            <h3 class="title-3" style="color: var(--make); margin-bottom: 2rem; font-family: var(--fontFamily-forum);">Newsletter</h3>
+            <p class="" style="margin-bottom: 2rem;">Subscribe to our newsletter for the latest travel updates and special offers.</p>
+            <form class="newsletter-form" style="display: flex;">
+              <input type="email" placeholder="Your Email" style="flex: 1; padding: 1rem; border: 1px solid var(--gold-crayola); background: transparent; color: var(--make);">
+              <button type="submit" style="background: var(--gold-crayola); color: var(--make); border: none; padding: 0 1.5rem; cursor: pointer;">
+                <ion-icon name="send-outline"></ion-icon>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 4rem; padding-top: 2rem; text-align: center;">
+          <p class="body-2" style="color: var(--make);">&copy; 2025 Island Hopes Travels. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+      <!--trip advisor -->
+<a href="https://www.tripadvisor.com/" target="_blank" aria-label="Trip Advisor" class="tripadvisor-btn" style="position: fixed; bottom: 14rem; right: 2rem; background: #000000; width: 4.5rem; height: 4.5rem; display: grid; place-items: center; color: white; font-size: 2rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1); z-index: 999; opacity: 0; visibility: hidden; transform: translateY(10rem); transition: all 0.5s ease; ">
+   <img src="./assets/tripadvisor-logo-svgrepo-com.svg" alt="" width="40px">
+</a>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/94774852795" target="_blank" aria-label="whatsapp" class="whatsapp-btn" style="position: fixed; bottom: 8rem; right: 2rem; background: green; width: 4.5rem; height: 4.5rem; display: grid; place-items: center; color: var(--make); font-size: 2rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1); z-index: 999; opacity: 0; visibility: hidden; transform: translateY(6rem); transition: var(--transition-2);">
+      <ion-icon name="logo-whatsapp" aria-hidden="true"></ion-icon>
+    </a>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-top-btn" aria-label="back to top" style="position: fixed; bottom: 2rem; right: 2rem; background: var(--gold-crayola); width: 4.5rem; height: 4.5rem; display: grid; place-items: center; color: var(--make); font-size: 2rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1); z-index: 999; opacity: 0; visibility: hidden; transform: translateY(2rem); transition: var(--transition-2);">
+      <ion-icon name="chevron-up-outline" aria-hidden="true"></ion-icon>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="./js/main.js"></script>
+    <script src="./js/gsap.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Service Page Specific JavaScript -->
+    <script>
+      // FAQ Toggle Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        // FAQ toggle functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+          question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const toggle = question.querySelector('.faq-toggle');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(faqItem => {
+              if (faqItem !== item) {
+                faqItem.querySelector('.faq-question').classList.remove('active');
+                faqItem.querySelector('.faq-answer').classList.remove('active');
+              }
+            });
+            
+            // Toggle current item
+            question.classList.toggle('active');
+            answer.classList.toggle('active');
+          });
+        });
+        
+        // Modal functionality
+        const modalTriggers = document.querySelectorAll('[data-modal]');
+        const modals = document.querySelectorAll('.package-modal');
+        const modalCloseButtons = document.querySelectorAll('.modal-close');
+        
+        // Open modal
+        modalTriggers.forEach(trigger => {
+          trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = trigger.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+          });
+        });
+        
+        // Close modal
+        modalCloseButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const modal = button.closest('.package-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+          });
+        });
+        
+        // Close modal when clicking outside
+        modals.forEach(modal => {
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              modal.style.display = 'none';
+              document.body.style.overflow = 'auto';
+            }
+          });
+        });
+        
+        // Back to top button
+        const backTopBtn = document.querySelector('.back-top-btn');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backTopBtn.style.opacity = '1';
+            backTopBtn.style.visibility = 'visible';
+            backTopBtn.style.transform = 'translateY(0)';
+          } else {
+            backTopBtn.style.opacity = '0';
+            backTopBtn.style.visibility = 'hidden';
+            backTopBtn.style.transform = 'translateY(2rem)';
+          }
+        });
+        
+        // WhatsApp button
+        const whatsappBtn = document.querySelector('.whatsapp-btn');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            whatsappBtn.style.opacity = '1';
+            whatsappBtn.style.visibility = 'visible';
+            whatsappBtn.style.transform = 'translateY(0)';
+          } else {
+            whatsappBtn.style.opacity = '0';
+            whatsappBtn.style.visibility = 'hidden';
+            whatsappBtn.style.transform = 'translateY(6rem)';
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
+    
