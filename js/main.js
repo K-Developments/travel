@@ -484,3 +484,95 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
+
+    
+      // FAQ Toggle Functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        // FAQ toggle functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+          question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const toggle = question.querySelector('.faq-toggle');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(faqItem => {
+              if (faqItem !== item) {
+                faqItem.querySelector('.faq-question').classList.remove('active');
+                faqItem.querySelector('.faq-answer').classList.remove('active');
+              }
+            });
+            
+            // Toggle current item
+            question.classList.toggle('active');
+            answer.classList.toggle('active');
+          });
+        });
+        
+        // Modal functionality
+        const modalTriggers = document.querySelectorAll('[data-modal]');
+        const modals = document.querySelectorAll('.package-modal');
+        const modalCloseButtons = document.querySelectorAll('.modal-close');
+        
+        // Open modal
+        modalTriggers.forEach(trigger => {
+          trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            const modalId = trigger.getAttribute('data-modal');
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+          });
+        });
+        
+        // Close modal
+        modalCloseButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const modal = button.closest('.package-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+          });
+        });
+        
+        // Close modal when clicking outside
+        modals.forEach(modal => {
+          modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+              modal.style.display = 'none';
+              document.body.style.overflow = 'auto';
+            }
+          });
+        });
+        
+        // Back to top button
+        const backTopBtn = document.querySelector('.back-top-btn');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            backTopBtn.style.opacity = '1';
+            backTopBtn.style.visibility = 'visible';
+            backTopBtn.style.transform = 'translateY(0)';
+          } else {
+            backTopBtn.style.opacity = '0';
+            backTopBtn.style.visibility = 'hidden';
+            backTopBtn.style.transform = 'translateY(2rem)';
+          }
+        });
+        
+        // WhatsApp button
+        const whatsappBtn = document.querySelector('.whatsapp-btn');
+        window.addEventListener('scroll', () => {
+          if (window.scrollY > 300) {
+            whatsappBtn.style.opacity = '1';
+            whatsappBtn.style.visibility = 'visible';
+            whatsappBtn.style.transform = 'translateY(0)';
+          } else {
+            whatsappBtn.style.opacity = '0';
+            whatsappBtn.style.visibility = 'hidden';
+            whatsappBtn.style.transform = 'translateY(6rem)';
+          }
+        });
+      });
+    
+
+     
