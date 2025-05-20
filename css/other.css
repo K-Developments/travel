@@ -177,6 +177,7 @@ body {
   font-weight: var(--weight-regular);
   line-height: var(--lineHeight-5);
 
+
 }
 
 body.loaded {
@@ -781,7 +782,7 @@ body.nav-active {
   margin-block-end: 6px;
 }
 
-.hero-btn .span {
+.label-3 {
   color: var(--color-black);
   font-weight: var(--weight-bold);
   text-transform: uppercase;
@@ -2474,4 +2475,8 @@ mix-blend-mode: soft-light;
     height: 100%;
   }
 
- 
+  .swiper-pagination-2{
+    width:fit-content !important;
+  }
+
+
