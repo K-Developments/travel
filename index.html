@@ -166,7 +166,7 @@
       </nav>
 
       <div class="header-actions">
-        <a href="#contact" class="btn btn-secondary">
+        <a href="contact.html" class="btn btn-secondary">
           <span class="text text-1">Contact</span>
           <span class="text text-2" aria-hidden>Contact</span>
         </a>
@@ -189,7 +189,7 @@
 
 
   <!--main-->
-  <main>
+  <main class="content">
 
 
     <!--hero section-->
@@ -208,7 +208,7 @@
           </h1>
 
 
-          <a href="#" class="btn slider-reveal">
+          <a href="packages.html" class="btn slider-reveal">
             <span class="text text-1">View Packages</span>
             <span class="text text-2" aria-hidden="true">View Packages</span>
           </a>
@@ -255,10 +255,13 @@
         <ion-icon name="chevron-forward"></ion-icon>
       </button>
 
-      <a href="#" class="hero-btn has-after" role="button">
-        <img src="./assets/hero-icon.png" alt="booking icon" width="48" height="48" loading="lazy">
-        <span class="label-2 text-center span">Read Blog</span>
-      </a>
+      <a href="blog.html" class="hero-btn has-after flex-col px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white rounded-lg transition-colors duration-300" role="button">
+        <div class="flex justify-center">
+          <ion-icon name="book-outline" class="text-[5rem]"></ion-icon>
+        </div>
+  
+  <span class="label-3">Read Blog</span>
+</a>
 
     </section>
 
@@ -347,27 +350,29 @@
       </div>
 
     </section>
-
-<section id="what-we-offer" class="py-20 " style="margin-top: 10rem;">
+<section id="what-we-offer" class="py-20" style="margin-top: 10rem;">
   <div class="container mx-auto px-4" style="margin: auto;">
     <!-- Section Header -->
-   <div class="text-center" style="margin-bottom: 6rem;">
-  <div class="section-subtitle" style="color: var(--gold-crayola);">What We Offer</div>
-  <h2 class="headline-1" style="color: var(--gold-crayola); margin-bottom: 2rem;">Discover Our Journey</h2>
-  <p class="body-2" style="max-width: 800px; margin: 0 auto;">
-    Embark on unforgettable adventures with our expertly crafted tours. From the sun-kissed beaches of the south to the misty highlands of the central region, we curate authentic Sri Lankan experiences that blend culture, nature, and adventure. Our local guides will take you beyond the tourist trails to discover hidden gems, ancient traditions, and breathtaking landscapes that will leave you with memories to last a lifetime.
-  </p>
-</div>
-
+    <div class="text-center" style="margin-bottom: 6rem;">
+      <div class="section-subtitle" style="color: var(--gold-crayola);">What We Offer</div>
+      <h2 class="headline-1" style="color: var(--gold-crayola); margin-bottom: 2rem;">
+        Curated Experiences, Unforgettable Memories
+      </h2>
+      <p class="body-2" style="max-width: 800px; margin: 0 auto;">
+        We craft personalized journeys that reveal Sri Lanka's soul - from golden beaches to misty highlands. 
+        Our handpicked adventures blend luxury with authenticity, taking you beyond guidebooks to create 
+        moments that linger long after you return home.
+      </p>
+    </div>
     <!-- Services Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 gap-2" >
       <!-- Service Card 1 -->
-      <div class="service-card group">
-        <div class="service-card-image">
-          <img src="./assets/tour-plan.jpg" alt="Customized Tour Packages" class="w-full h-full object-cover">
-        </div>
-        <div class="service-card-content">
-          <h3 class="service-card-title">Customized Tour Packages</h3>
+      <div class="service-card group relative overflow-hidden">
+        <div class="service-card-image relative">
+          <img src="./assets/tour-plan.jpg" alt="Customized Tour Packages" class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
+ <div class="absolute inset-0 bg-black opacity-30 group-hover:opacity-50 transition duration-300"></div>        </div>
+        <div class="service-card-content relative z-10">
+          <h3 class="service-card-title " >Customized Tour Packages</h3>
           <p class="service-card-description">Tailor-made travel experiences to match your interests, budget, and timeline.</p>
           <button class="service-card-button" data-modal="tour-modal">
             <span>Read more</span>
@@ -379,11 +384,11 @@
       </div>
 
       <!-- Service Card 2 -->
-      <div class="service-card group lg:translate-y-10">
-        <div class="service-card-image">
-          <img src="./assets/top-packages.jpg" alt="Expert Local Guides" class="w-full h-full object-cover">
-        </div>
-        <div class="service-card-content">
+      <div class="service-card group lg:translate-y-10 relative overflow-hidden">
+        <div class="service-card-image relative">
+          <img src="./assets/top-packages.jpg" alt="Expert Local Guides" class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
+ <div class="absolute inset-0 bg-black opacity-30 group-hover:opacity-50 transition duration-300"></div>        </div>
+        <div class="service-card-content relative z-10">
           <h3 class="service-card-title">Expert Local Guides</h3>
           <p class="service-card-description">Professional and friendly guides who know the hidden gems, local culture, and must-see spots.</p>
           <button class="service-card-button" data-modal="guides-modal">
@@ -396,11 +401,11 @@
       </div>
 
       <!-- Service Card 3 -->
-      <div class="service-card group lg:col-span-1 md:col-span-2">
-        <div class="service-card-image">
-          <img src="./assets/24-hour-service.jpg" alt="24/7 Support & Safety Assurance" class="w-full h-full object-cover">
-        </div>
-        <div class="service-card-content">
+      <div class="service-card group lg:col-span-1 md:col-span-2 relative overflow-hidden">
+        <div class="service-card-image relative">
+          <img src="./assets/24-hour-service.jpg" alt="24/7 Support & Safety Assurance" class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
+ <div class="absolute inset-0 bg-black opacity-30 group-hover:opacity-50 transition duration-300"></div>        </div>
+        <div class="service-card-content relative z-10">
           <h3 class="service-card-title">24/7 Support & Safety Assurance</h3>
           <p class="service-card-description">Round-the-clock assistance and reliable travel safety so you can explore worry-free.</p>
           <button class="service-card-button" data-modal="support-modal">
@@ -414,13 +419,13 @@
     </div>
 
     <!-- Second Row of Services -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 " style=" margin-top: 2rem;">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-8 gap-2 " style=" margin-top: 1rem;">
       <!-- Service Card 4 -->
-      <div class="service-card group">
-        <div class="service-card-image">
-          <img src="./assets/offer-card/transpotaion.webp" alt="Comfortable Transportation" class="w-full h-full object-cover">
-        </div>
-        <div class="service-card-content">
+      <div class="service-card group relative overflow-hidden">
+        <div class="service-card-image relative">
+          <img src="./assets/offer-card/transpotaion.webp" alt="Comfortable Transportation" class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
+ <div class="absolute inset-0 bg-black opacity-30 group-hover:opacity-50 transition duration-300"></div>        </div>
+        <div class="service-card-content relative z-10">
           <h3 class="service-card-title">Comfortable Transportation</h3>
           <p class="service-card-description">Reliable and comfortable vehicles with professional drivers for seamless travel.</p>
           <button class="service-card-button" data-modal="transportation-modal">
@@ -433,11 +438,11 @@
       </div>
 
       <!-- Service Card 5 -->
-      <div class="service-card group lg:translate-y-10">
-        <div class="service-card-image">
-          <img src="./assets/offer-card/hotel-reservation.jpg" alt="Hotel Reservations" class="w-full h-full object-cover">
-        </div>
-        <div class="service-card-content">
+      <div class="service-card group lg:translate-y-10 relative overflow-hidden">
+        <div class="service-card-image relative">
+          <img src="./assets/offer-card/hotel-reservation.jpg" alt="Hotel Reservations" class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
+ <div class="absolute inset-0 bg-black opacity-30 group-hover:opacity-50 transition duration-300"></div>        </div>
+        <div class="service-card-content relative z-10">
           <h3 class="service-card-title">Hotel Reservations</h3>
           <p class="service-card-description">Partnered with the best hotels to ensure comfortable stays at competitive prices.</p>
           <button class="service-card-button" data-modal="hotel-modal">
@@ -450,11 +455,13 @@
       </div>
 
       <!-- Service Card 6 -->
-      <div class="service-card group lg:col-span-1 md:col-span-2">
-        <div class="service-card-image">
-          <img src="./assets/offer-card/activity.jpg" alt="Exciting Activities" class="w-full h-full object-cover">
-        </div>
-        <div class="service-card-content">
+      <div class="service-card group lg:col-span-1 md:col-span-2 relative overflow-hidden">
+        <div class="service-card-image relative">
+          <img src="./assets/offer-card/activity.jpg" alt="Exciting Activities" class="w-full h-full object-cover transition duration-300 group-hover:scale-105">
+
+          <div class="absolute inset-0 bg-black opacity-30 group-hover:opacity-50 transition duration-300"></div>
+        <div class="service-card-content relative z-10">
+
           <h3 class="service-card-title">Exciting Activities</h3>
           <p class="service-card-description">Curated experiences including safaris, boat rides, and cultural activities.</p>
           <button class="service-card-button" data-modal="activities-modal">
@@ -524,8 +531,9 @@
         </div>
 
         <div class="modal-actions">
-          <button class="modal-btn btn-primary">Book Now</button>
-          <button class="modal-btn btn-secondary">Contact Us</button>
+          <a href="packages.html">    <button class="modal-btn btn-primary">View Packages</button></a>
+          <a href="contact.html"><button class="modal-btn btn-secondary">Contact Us</button></a>
+          
         </div>
       </div>
     </div>
@@ -586,8 +594,10 @@
         </div>
 
         <div class="modal-actions">
-          <button class="modal-btn btn-primary">Book a Guide</button>
-          <button class="modal-btn btn-secondary">Learn More</button>
+          <a href="services.html">
+            <button class="modal-btn btn-secondary">Learn More</button>
+          </a>
+          
         </div>
       </div>
     </div>
@@ -647,8 +657,12 @@
         </div>
 
         <div class="modal-actions">
-          <button class="modal-btn btn-primary">Get Assistance</button>
-          <button class="modal-btn btn-secondary">Safety Tips</button>
+          <a href="contact.html"> <button class="modal-btn btn-primary">Get Assistance</button></a>
+         
+          <a href="blog.html">
+            <button  class="modal-btn btn-secondary">Safety Tips</button>
+          </a>
+          
         </div>
       </div>
     </div>
@@ -708,8 +722,9 @@
         </div>
 
         <div class="modal-actions">
-          <button class="modal-btn btn-primary">Book Transportation</button>
-          <button class="modal-btn btn-secondary">View Fleet</button>
+          <a href="contact.html">   <button class="modal-btn btn-primary">Book Transportation</button></a>
+       
+      
         </div>
       </div>
     </div>
@@ -769,8 +784,9 @@
         </div>
 
         <div class="modal-actions">
-          <button class="modal-btn btn-primary">Find Hotels</button>
-          <button class="modal-btn btn-secondary">Special Offers</button>
+          <a href="contact.html"><button class="modal-btn btn-primary">Find Hotels</button></a>
+          
+      
         </div>
       </div>
     </div>
@@ -833,63 +849,67 @@
         </div>
 
         <div class="modal-actions">
-          <button class="modal-btn btn-primary">Book Activities</button>
-          <button class="modal-btn btn-secondary">Seasonal Offers</button>
+          <a href="contact.html">   <button class="modal-btn btn-primary">Contact Us for More</button></a>
+       
+       
         </div>
       </div>
     </div>
   </div>
 
      <!-- Second Swiper Slider Section -->
- <section class="section relative overflow-hidden z-[111]" style="padding: 5rem 0; background-color: var(--gold-crayola); margin-top: 7rem;">
+ <section class="swiper-section section relative overflow-hidden z-[111]" style="padding: 2rem 0; background-color: var(--darker); margin-top: 7rem;">
 
   <!-- Swiper Container with Movement Classes -->
   <div class="swiper-container-2 move-slider" style="width: 100%; overflow: hidden;">
     <div class="swiper-wrapper">
       <!-- Slide 1 with Animation -->
-      <div class="swiper-slide">
-        <div class="container" style="margin-inline: auto; max-width: 1200px; padding: 0 2rem;">
+     <div class="swiper-slide">
+        <div  style="margin-inline: auto; max-width: 1200px; padding: 0 2rem;">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div class="order-2 md:order-1 text-center md:text-left slide-content">
               <h2 class="headline-1 slide-title" style="color: var(--make); margin-bottom: 2rem; transform: translateX(-50px); opacity: 0; transition: all 0.8s ease;">Ayubowan</h2>
               <p class="body-2 mb-8 slide-text" style="color: var(--make); max-width: 600px; margin-left: auto; margin-right: auto; transform: translateX(-50px); opacity: 0; transition: all 0.8s ease 0.3s;">
-                Discover Sri Lanka's 8 UNESCO World Heritage Sites spanning 2,000+ years of history.
+                Experience Sri Lankan Culture
               </p>
               <div class="flex justify-center md:justify-start gap-4 slide-buttons" style="transform: translateY(30px); opacity: 0; transition: all 0.8s ease 0.6s;">
-                <a href="heritage.html" class="btn" style="background-color: var(--make); color: var(--gold-crayola);">
-                  <span class="text text-1">Explore Heritage</span>
-                  <span class="text text-2" aria-hidden="true">Explore Heritage</span>
+                <a href="heritage.html" class="btn" style="background-color: var(--darker); color: var(--gold-crayola);">
+                  <span class="text text-1">Travel Packages</span>
+                  <span class="text text-2" aria-hidden="true">Travel Packages</span>
                 </a>
-                <a href="history.html" class="btn" style="border: 2px solid var(--make); color: var(--make);">
+                <a href="about.html" class="btn" style="border: 2px solid var(--make); color: var(--make);">
                   <span class="text text-1">Our History</span>
                   <span class="text text-2" aria-hidden="true">Our History</span>
                 </a>
               </div>
             </div>
-          <div class="order-1 md:order-2 flex justify-center slide-image" style="transform: scale(0.8); opacity: 0; transition: all 0.8s ease;">
-              <img src="./assets/WhatsApp Image 2025-05-19 at 16.58.03_88af1594.jpg" alt="Ancient City of Polonnaruwa" width="300" style="max-width: 100%; height: auto;  transform: rotate(-5deg); transition: transform 0.6s ease;">
-            </div>
+           <div class="order-1 md:order-2 slide-image relative overflow-hidden" 
+     style="transform: scale(0.8); opacity: 0; transition: all 0.8s ease; height: 100%; width: 100%;">
+  <img src="./assets/welcome  girl .png" 
+       alt="Sri Lankan Traditional Dance" 
+       style="width: 100%; height: 350px; object-fit: cover; object-position: center; transform: rotate(-5deg); transition: transform 0.6s ease;">
+</div>
           </div>
         </div>
       </div>
 
       <!-- Slide 2 with Animation -->
       <div class="swiper-slide">
-        <div class="container" style="margin-inline: auto; max-width: 1200px; padding: 0 2rem;">
+        <div  style="margin-inline: auto; max-width: 1200px; padding: 0 2rem;">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div class="order-2 md:order-1 text-center md:text-left slide-content">
-              <h2 class="headline-1 slide-title" style="color: var(--make); margin-bottom: 2rem; transform: translateX(-50px); opacity: 0; transition: all 0.8s ease;">Sri Lankan Tradition</h2>
+              <h2 class="headline-1 slide-title" style="color: var(--make); margin-bottom: 2rem; transform: translateX(-50px); opacity: 0; transition: all 0.8s ease;">Ready to Plan Your Journey</h2>
               <p class="body-2 mb-8 slide-text" style="color: var(--make); max-width: 600px; margin-left: auto; margin-right: auto; transform: translateX(-50px); opacity: 0; transition: all 0.8s ease 0.3s;">
                 Experience Sri Lankan Culture
               </p>
               <div class="flex justify-center md:justify-start gap-4 slide-buttons" style="transform: translateY(30px); opacity: 0; transition: all 0.8s ease 0.6s;">
-                <a href="safari.html" class="btn" style="background-color: var(--make); color: var(--gold-crayola);">
-                  <span class="text text-1">Safari Tours</span>
-                  <span class="text text-2" aria-hidden="true">Safari Tours</span>
+                <a href="heritage.html" class="btn" style="background-color: var(--darker); color: var(--gold-crayola);">
+                  <span class="text text-1">Travel Packages</span>
+                  <span class="text text-2" aria-hidden="true">Travel Packages</span>
                 </a>
-                <a href="wildlife.html" class="btn" style="border: 2px solid var(--make); color: var(--make);">
-                  <span class="text text-1">Wildlife Guide</span>
-                  <span class="text text-2" aria-hidden="true">Wildlife Guide</span>
+                <a href="about.html" class="btn" style="border: 2px solid var(--make); color: var(--make);">
+                  <span class="text text-1">Our History</span>
+                  <span class="text text-2" aria-hidden="true">Our History</span>
                 </a>
               </div>
             </div>
@@ -906,7 +926,7 @@
 
        <!-- Slide 3 with Animation -->
       <div class="swiper-slide">
-        <div class="container" style="margin-inline: auto; max-width: 1200px; padding: 0 2rem;">
+        <div style="margin-inline: auto; max-width: 1200px; padding: 0 2rem;">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div class="order-2 md:order-1 text-center md:text-left slide-content">
               <h2 class="headline-1 slide-title" style="color: var(--make); margin-bottom: 2rem; transform: translateX(-50px); opacity: 0; transition: all 0.8s ease;">Sri Lankan Tradition</h2>
@@ -914,13 +934,13 @@
                 Experience Sri Lankan Culture
               </p>
               <div class="flex justify-center md:justify-start gap-4 slide-buttons" style="transform: translateY(30px); opacity: 0; transition: all 0.8s ease 0.6s;">
-                <a href="safari.html" class="btn" style="background-color: var(--make); color: var(--gold-crayola);">
-                  <span class="text text-1">Safari Tours</span>
-                  <span class="text text-2" aria-hidden="true">Safari Tours</span>
+                <a href="heritage.html" class="btn" style="background-color: var(--darker); color: var(--gold-crayola);">
+                  <span class="text text-1">Travel Packages</span>
+                  <span class="text text-2" aria-hidden="true">Travel Packages</span>
                 </a>
-                <a href="wildlife.html" class="btn" style="border: 2px solid var(--make); color: var(--make);">
-                  <span class="text text-1">Wildlife Guide</span>
-                  <span class="text text-2" aria-hidden="true">Wildlife Guide</span>
+                <a href="about.html" class="btn" style="border: 2px solid var(--make); color: var(--make);">
+                  <span class="text text-1">Our History</span>
+                  <span class="text text-2" aria-hidden="true">Our History</span>
                 </a>
               </div>
             </div>
@@ -936,11 +956,15 @@
     </div>
 
     <!-- Custom Pagination -->
-    <div class="swiper-pagination-2" style="position: absolute; bottom: 20px;"></div>
+     <div class="absolute bottom-0 left-0 right-0 flex lg:justify-start justify-center  items-center ">  
+       <div class="swiper-pagination-2 hidden lg:block " style="margin-left: 180px;" ></div>
+
+     </div>
+   
     
     <!-- Custom Navigation -->
-    <div class="swiper-button-next-2" style="color: var(--make); right: 20px;"></div>
-    <div class="swiper-button-prev-2" style="color: var(--make); left: 20px;"></div>
+    <div class="swiper-button-next-2 absolute" style="color: var(--make); right: 20px;"></div>
+    <div class="swiper-button-prev-2 absolute" style="color: var(--make); left: 20px;"></div>
   </div>
 </section> 
 
@@ -971,11 +995,11 @@
 
 
 
-            <a href="#" class="social" style="color: var(--make); font-size: 2rem;">
+            <a href="https://www.instagram.com/island_hopes_travels" target="_blank" class="social" style="color: var(--make); font-size: 2rem;">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
 
-            <a href="#" class="social" style="color: var(--make); font-size: 2rem;">
+            <a href="https://wa.me/94774852795" target="_blank" class="social" style="color: var(--make); font-size: 2rem;">
               <ion-icon name="logo-whatsapp"></ion-icon>
             </a>
 
