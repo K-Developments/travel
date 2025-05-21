@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /logo.jpg
+
 Sitemap: https://islandhopestravels.com/sitemap.xml
