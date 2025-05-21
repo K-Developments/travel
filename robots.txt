@@ -1,7 +1,8 @@
 User-agent: *
-Allow: /
-
-User-agent: Googlebot
+Disallow: /private/
+Disallow: /wp-admin/
 Allow: /logo.jpg
+Allow: /images/
+Allow: /assets/
 
 Sitemap: https://islandhopestravels.com/sitemap.xml
