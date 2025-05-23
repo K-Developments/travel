@@ -154,6 +154,7 @@ document.addEventListener('DOMContentLoaded', function () {
           768: {
             slidesPerView: 2,
             spaceBetween: 30
+           
           },
           // when window width is >= 1024px
           1024: {
@@ -575,4 +576,63 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     
 
-     
+     //////
+     // Initialize Experience Gallery Swipers
+document.addEventListener('DOMContentLoaded', function() {
+  // Main gallery swiper
+  const mainSwiper = new Swiper('.main-gallery-swiper', {
+    loop: true,
+    spaceBetween: 0,
+    speed: 800,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    navigation: {
+      nextEl: '.main-gallery-next',
+      prevEl: '.main-gallery-prev',
+    },
+    thumbs: {
+      swiper: {
+        el: '.thumbnail-gallery-swiper',
+        slidesPerView: 4,
+        spaceBetween: 10,
+        freeMode: true,
+        watchSlidesProgress: true,
+        breakpoints: {
+          320: {
+            slidesPerView: 2,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 4,
+          }
+        }
+      },
+    },
+  });
+
+  // Thumbnail click event
+  const thumbnails = document.querySelectorAll('.gallery-thumbnail');
+  thumbnails.forEach((thumb, index) => {
+    thumb.addEventListener('click', () => {
+      mainSwiper.slideTo(index);
+    });
+  });
+
+  // Parallax effect on main image
+  const mainImages = document.querySelectorAll('.gallery-main-image img');
+  mainImages.forEach(img => {
+    img.addEventListener('mousemove', (e) => {
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+      img.style.transform = `scale(1.05) translate(${x * 10}px, ${y * 10}px)`;
+    });
+    
+    img.addEventListener('mouseleave', () => {
+      img.style.transform = 'scale(1)';
+    });
+  });
+});
